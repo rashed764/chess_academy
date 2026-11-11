@@ -1,0 +1,6 @@
+{
+  "name": "ChessMind Academy",
+  "description": "World-Class AI-Powered Chess Learning University from Zero to Legend. Master principles, tactics, endgame technique, and engine-guided analysis with an adaptive AI Grandmaster coach.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

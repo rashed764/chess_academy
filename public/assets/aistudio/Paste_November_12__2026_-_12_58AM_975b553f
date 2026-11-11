@@ -1,0 +1,1391 @@
+# MASTER PROJECT PROMPT — CHESSMIND ACADEMY
+## Build a World-Class AI-Powered Chess Learning University from Zero to Legend
+
+---
+
+# 1. YOUR MISSION
+
+You are the Chief Orchestrator and Principal Software Architect of a professional multi-agent software development team.
+
+Your mission is to build **ChessMind Academy**, a complete, production-quality, AI-powered chess education platform.
+
+This is a completely NEW project.
+
+**PROJECT ROOT (MANDATORY):**
+`C:\Users\rmdis\workspace\chess_academy`
+
+The directory is currently empty. Do not assume that any existing source code, configuration, documentation, database schema, components, or dependencies exist.
+
+You have access to a multi-agent development team through Kilo Code, including:
+
+- Orchestrator
+- Planner
+- Architect
+- Code Developer
+- Bug Fixer
+- Ask / Research Agent
+- Other available specialist agents
+
+Use the actual agents and their available tools. Do not pretend to have used an agent or tool that was not actually invoked.
+
+Your objective is not to create a simple chess game.
+
+Your objective is to create a complete digital chess university where an absolute beginner can eventually develop into a highly skilled competitive chess player.
+
+The platform must combine:
+
+1. Professional chess education.
+2. AI-powered personal coaching.
+3. Interactive chessboard learning.
+4. Chess engine analysis.
+5. Adaptive learning.
+6. Real game practice.
+7. Progress tracking.
+8. Long-term skill development.
+
+Every visible feature must eventually have real functionality.
+
+Never build a fake product filled with decorative buttons, simulated AI responses, or hardcoded progress presented as real user data.
+
+---
+
+# 2. PRODUCT IDENTITY
+
+Product name: ChessMind Academy
+
+Product category: AI-Powered Chess Education Platform.
+
+Core philosophy:
+
+"Learn Chess. Understand Chess. Master Chess."
+
+The platform should feel like a combination of:
+
+- A premium online university.
+- A professional chess training academy.
+- A personal AI coaching studio.
+- An interactive chess learning laboratory.
+
+Target users:
+
+- Complete beginners who have never played chess.
+- Casual chess players.
+- Intermediate players.
+- Advanced players.
+- Competitive and tournament-oriented players.
+
+The platform must be accessible to someone who knows absolutely nothing about chess.
+
+The educational system must gradually increase difficulty based on actual learning performance.
+
+---
+
+# 3. NON-NEGOTIABLE PRODUCT PRINCIPLES
+
+1. Education comes before gamification.
+2. AI must teach, not merely answer questions.
+3. Chess rules must be validated by a chess rules engine.
+4. Chess evaluations must come from a chess engine, not invented LLM analysis.
+5. User progress must be persisted in the database.
+6. Lessons must have measurable learning outcomes.
+7. Every interactive board must support legal move validation.
+8. Every feature must include loading, error, empty, and success states where applicable.
+9. No fake functionality.
+10. No hardcoded API credentials.
+11. No insecure database access.
+12. No unnecessary architectural complexity.
+13. Responsive design is mandatory.
+14. Accessibility and keyboard interaction must be considered.
+15. All important project decisions must be documented.
+
+Use small, independently testable implementation tasks.
+
+Never implement the entire application in one uncontrolled coding operation.
+
+---
+
+# 4. AGENT ORGANIZATION AND RESPONSIBILITIES
+
+## 4.1 Orchestrator
+
+The Orchestrator owns the complete project.
+
+Responsibilities:
+
+- Maintain the master roadmap.
+- Delegate tasks to the appropriate agents.
+- Coordinate dependencies.
+- Review agent outputs.
+- Prevent conflicting implementations.
+- Maintain architectural consistency.
+- Verify completion evidence.
+- Ensure documentation is updated.
+- Stop after each implementation task and report results.
+
+The Orchestrator must never claim that a task is complete without evidence.
+
+## 4.2 Planner Agent
+
+Responsibilities:
+
+- Break large requirements into small implementation tasks.
+- Define dependencies.
+- Define acceptance criteria.
+- Identify technical risks.
+- Maintain task status.
+- Prevent scope creep.
+
+Every task must include:
+
+- Task ID.
+- Objective.
+- Prerequisites.
+- Files expected to change.
+- Implementation requirements.
+- Acceptance criteria.
+- Test requirements.
+- Completion evidence.
+
+## 4.3 Architect Agent
+
+Responsibilities:
+
+- Design application architecture.
+- Define module boundaries.
+- Define database relationships.
+- Define API contracts.
+- Review security.
+- Review scalability.
+- Prevent unnecessary dependencies and abstractions.
+
+## 4.4 Code Developer
+
+Responsibilities:
+
+- Implement approved tasks.
+- Follow existing architecture.
+- Write reusable, typed components.
+- Avoid duplicated logic.
+- Implement real functionality.
+- Add tests alongside implementation.
+
+## 4.5 Bug Fixer / QA Agent
+
+Responsibilities:
+
+- Run tests and inspect failures.
+- Identify regressions.
+- Review edge cases.
+- Test chess legality.
+- Test authentication and authorization.
+- Verify responsive layouts.
+- Verify API error handling.
+
+Do not silently hide test failures.
+
+## 4.6 Research / Ask Agent
+
+Responsibilities:
+
+- Research current official documentation.
+- Inspect relevant GitHub repositories.
+- Verify package compatibility.
+- Investigate chess algorithms and teaching methodologies.
+- Evaluate third-party integrations.
+- Identify licensing obligations.
+
+Prefer official documentation and actively maintained repositories.
+
+Never assume an API or package method exists without verifying it.
+
+---
+
+# 5. TECHNOLOGY STACK
+
+Use a modern, maintainable, TypeScript-first architecture.
+
+## Frontend
+
+- Next.js 16 App Router.
+- React 19.
+- TypeScript with strict mode.
+- Tailwind CSS 4.
+- shadcn/ui.
+- Lucide icons.
+- Zustand for client-side state.
+
+## Chess System
+
+- react-chessboard for interactive chessboard rendering.
+- chess.js for legal move validation and game state.
+- Stockfish WebAssembly for engine analysis.
+- UCI communication through a dedicated engine adapter.
+
+## Backend
+
+- Next.js Route Handlers / appropriate server-side functions.
+- Supabase PostgreSQL.
+- Supabase Auth.
+- Supabase Storage.
+- Row Level Security.
+
+## AI
+
+Build a provider-independent AI integration layer.
+
+Initial supported providers:
+
+- OpenAI.
+- Anthropic.
+- Google Gemini.
+
+The application must not depend directly on one specific model provider.
+
+Create a common AI provider interface.
+
+All model calls must be routed through server-side code.
+
+Support:
+
+- Model configuration.
+- API key configuration.
+- Provider selection.
+- Connection testing.
+- Timeouts.
+- Retry policies.
+- Rate limits.
+- Usage tracking.
+- Token usage reporting.
+- Structured JSON responses.
+- Graceful provider failure handling.
+
+Never expose provider API keys to the client.
+
+Do not assume that a provider API key is available until it has been configured.
+
+Use environment variables and provide a documented `.env.example` containing placeholders only.
+
+## Important Engineering Constraint
+
+Before installing dependencies:
+
+1. Research current package versions.
+2. Inspect official documentation.
+3. Verify compatibility.
+4. Verify licensing.
+5. Pin compatible versions through the package manager lockfile.
+
+Stockfish distribution must comply with its GPL licensing requirements. Document the exact engine distribution and corresponding source/license obligations before shipping.
+
+Do not bundle an engine build without reviewing its license.
+
+---
+
+# 6. COMPLETE APPLICATION EXPERIENCE
+
+Build a cohesive application, not disconnected pages.
+
+## 6.1 Public Landing Page
+
+Create a beautiful, premium landing page.
+
+Sections:
+
+1. Navigation.
+2. Hero section.
+3. Interactive chess education preview.
+4. How AI coaching works.
+5. Learning journey.
+6. Academy features.
+7. Student progress examples.
+8. Testimonials only when genuine testimonials exist.
+9. Pricing structure, only if a real pricing model is implemented.
+10. FAQ.
+11. Footer.
+
+Primary calls to action:
+
+- Start Learning.
+- Explore Academy.
+- Meet Your AI Coach.
+
+Avoid misleading statistics and fabricated social proof.
+
+## 6.2 Authentication
+
+Implement:
+
+- Sign up.
+- Login.
+- Logout.
+- Password recovery.
+- Email verification.
+- Session management.
+- Protected routes.
+- User profile.
+- Account settings.
+
+Use secure Supabase SSR authentication.
+
+## 6.3 Student Onboarding
+
+After registration, introduce the student to the academy.
+
+Ask for:
+
+- Chess experience.
+- Current skill level.
+- Learning objectives.
+- Preferred learning pace.
+- Daily study target.
+- Preferred language.
+
+Perform an initial skill assessment.
+
+Do not assume that a self-declared rating is accurate.
+
+Generate an initial learning plan from the assessment.
+
+## 6.4 Student Dashboard
+
+The dashboard should display:
+
+- Welcome message.
+- Current learning rank.
+- Current course.
+- Continue learning.
+- Daily learning goal.
+- Daily streak.
+- XP.
+- Lessons completed.
+- Puzzle performance.
+- Recent games.
+- Weakest chess skills.
+- Recommended next activity.
+- AI coach access.
+
+All metrics must come from actual persisted data.
+
+## 6.5 AI Learning Academy
+
+This is the central product.
+
+Organize the curriculum into progressive stages.
+
+### Stage 1 — Absolute Beginner
+
+Teach:
+
+- What is chess?
+- The chessboard.
+- Files and ranks.
+- White and Black.
+- All six chess pieces.
+- How each piece moves.
+- Capturing.
+- Check.
+- Checkmate.
+- Stalemate.
+- Castling.
+- En passant.
+- Pawn promotion.
+- Basic game notation.
+
+Learning objective: The student can understand and play a complete legal chess game.
+
+### Stage 2 — Beginner
+
+Teach:
+
+- Opening principles.
+- Center control.
+- Piece development.
+- King safety.
+- Basic checkmates.
+- One-move tactics.
+- Basic blunder recognition.
+
+### Stage 3 — Intermediate
+
+Teach:
+
+- Forks.
+- Pins.
+- Skewers.
+- Discovered attacks.
+- Double attacks.
+- Deflection.
+- Decoy.
+- Removing the defender.
+- Tactical combinations.
+- Basic positional concepts.
+
+### Stage 4 — Advanced
+
+Teach:
+
+- Pawn structures.
+- Weak squares.
+- Open files.
+- Outposts.
+- Piece activity.
+- Good bishop vs bad bishop.
+- Prophylaxis.
+- Positional sacrifices.
+- Calculation techniques.
+- Candidate moves.
+- Strategic planning.
+
+### Stage 5 — Expert
+
+Teach:
+
+- Opening repertoire.
+- Opening preparation.
+- Complex middlegame positions.
+- Advanced calculation.
+- Exchange sacrifices.
+- Positional evaluation.
+- Defensive techniques.
+- Advanced endgames.
+- Practical tournament decisions.
+
+### Stage 6 — Master Preparation
+
+Teach:
+
+- Deep calculation.
+- Critical position identification.
+- Advanced endgame technique.
+- Tournament preparation.
+- Opponent preparation.
+- Time management.
+- Practical decision-making.
+- Classical game analysis.
+- Self-analysis methodology.
+
+Do not claim that completing these stages automatically makes someone a titled chess master. Actual competitive strength depends on demonstrated playing performance.
+
+## 6.6 Lesson Experience
+
+Every lesson should include:
+
+1. Learning objective.
+2. Explanation.
+3. Interactive chessboard.
+4. Demonstration position.
+5. Step-by-step move explanation.
+6. Student exercise.
+7. Instant feedback.
+8. Knowledge check.
+9. Lesson summary.
+10. Completion and progress update.
+
+The board must be able to:
+
+- Display a FEN position.
+- Highlight relevant squares.
+- Show legal moves.
+- Show arrows.
+- Animate moves.
+- Undo moves when appropriate.
+- Reset exercises.
+- Track student attempts.
+
+Create a reusable teaching-action system.
+
+Example actions:
+
+- SET_POSITION
+- PLAY_MOVE
+- HIGHLIGHT_SQUARE
+- HIGHLIGHT_SQUARES
+- DRAW_ARROW
+- REMOVE_ARROW
+- SHOW_LEGAL_MOVES
+- UNDO_MOVE
+- RESET_BOARD
+- SHOW_HINT
+- WAIT_FOR_STUDENT_MOVE
+- SHOW_FEEDBACK
+
+Every action must be validated and handled by the application.
+
+The AI must never directly manipulate the chessboard through arbitrary JavaScript or untrusted code.
+
+## 6.7 Personal AI Chess Coach
+
+Build a dedicated AI teaching environment.
+
+Suggested layout:
+
+- Left: AI coach conversation.
+- Right: Interactive chessboard.
+- Bottom: move history and learning controls.
+
+The AI coach must:
+
+- Explain concepts in simple language.
+- Answer chess questions.
+- Demonstrate moves.
+- Give hints.
+- Ask questions.
+- Detect misconceptions.
+- Provide alternative explanations.
+- Adapt teaching difficulty.
+- Remember relevant learning context.
+- Recommend lessons based on actual performance.
+
+Support conversational context, but avoid sending an entire historical conversation to the model on every request.
+
+Use relevant summaries and limited context retrieval.
+
+### Teaching personality
+
+The AI should behave like a professional, patient chess instructor.
+
+For a beginner:
+
+Explain what the move does and why it matters.
+
+For an intermediate player:
+
+Explain tactical and positional consequences.
+
+For an advanced player:
+
+Discuss candidate moves, variations, evaluation, and strategic alternatives.
+
+Do not immediately reveal puzzle solutions when the student needs practice.
+
+Use graduated hints.
+
+## 6.8 Chess Practice Arena
+
+Implement:
+
+- Play against AI.
+- Difficulty selection.
+- White / Black selection.
+- Time controls.
+- Move history.
+- Resignation.
+- Draw offers where supported.
+- Game completion.
+- Game saving.
+
+AI opponents must use an actual chess engine or another clearly identified real playing service.
+
+Do not pretend an LLM-generated move is engine-level chess play.
+
+## 6.9 Puzzle Arena
+
+Implement:
+
+- Daily puzzles.
+- Tactical themes.
+- Difficulty levels.
+- Timed challenges.
+- Hint system.
+- Solution explanation.
+- Attempt tracking.
+- Accuracy tracking.
+- Weakness-based recommendations.
+
+Puzzle positions must come from verified puzzle data or properly validated generated positions.
+
+Never invent a puzzle solution without validating it.
+
+## 6.10 Game Analysis Studio
+
+After a game, provide:
+
+- Move-by-move review.
+- Blunders.
+- Mistakes.
+- Inaccuracies.
+- Missed tactical opportunities.
+- Best alternative moves.
+- Evaluation changes.
+- Opening identification where available.
+- Key turning points.
+- Improvement recommendations.
+
+Use Stockfish for engine evaluation.
+
+Use AI to explain engine findings in understandable language.
+
+Clearly distinguish engine evaluations from educational interpretations.
+
+## 6.11 Opening Academy
+
+Include:
+
+- Opening explorer.
+- Opening lessons.
+- Opening principles.
+- Repertoire management.
+- Move explanations.
+- Common traps.
+- Typical plans.
+- Practice positions.
+
+Avoid representing an unverified opening database as authoritative.
+
+## 6.12 Endgame Academy
+
+Include:
+
+- King and pawn endings.
+- Opposition.
+- Zugzwang.
+- Rook endings.
+- Basic theoretical endgames.
+- Checkmating techniques.
+- Interactive endgame exercises.
+
+## 6.13 Smart Revision
+
+Track student weaknesses.
+
+Example:
+
+If a student repeatedly fails pin and fork exercises:
+
+1. Detect the weakness.
+2. Recommend a short refresher lesson.
+3. Present simpler exercises.
+4. Increase difficulty gradually.
+5. Retest after a delay.
+6. Record improvement.
+
+Use actual performance data, not random recommendations.
+
+## 6.14 Gamification
+
+Implement:
+
+- XP.
+- Levels.
+- Learning streaks.
+- Achievements.
+- Daily challenges.
+- Weekly goals.
+- Skill badges.
+- Milestones.
+- Progress history.
+
+Keep gamification educational rather than distracting.
+
+Do not award XP repeatedly for the same action without a defined anti-abuse rule.
+
+## 6.15 Profile and Settings
+
+Include:
+
+- Personal profile.
+- Learning statistics.
+- Chess preferences.
+- Language.
+- Theme.
+- Notification preferences.
+- AI provider information where appropriate.
+- Privacy settings.
+- Account management.
+
+---
+
+# 7. AI TEACHING ARCHITECTURE
+
+This is one of the most important engineering requirements.
+
+Build the AI system using distinct responsibilities.
+
+### Layer A — LLM Provider Adapter
+
+Responsible for:
+
+- Provider communication.
+- Model configuration.
+- Structured responses.
+- Token usage.
+- Error handling.
+
+### Layer B — Chess Context Builder
+
+Responsible for preparing:
+
+- Current FEN.
+- Move history.
+- Student level.
+- Lesson objective.
+- Relevant engine analysis.
+- Previous student mistakes.
+- Conversation summary.
+
+### Layer C — Teaching Orchestrator
+
+Responsible for deciding:
+
+- What to explain.
+- When to ask a question.
+- When to give a hint.
+- When to demonstrate a move.
+- When to recommend a lesson.
+- When to evaluate understanding.
+
+### Layer D — Board Action Validator
+
+Responsible for:
+
+- Schema validation.
+- Legal move validation.
+- Position consistency.
+- Safe action execution.
+- Rejection of invalid actions.
+
+### Layer E — Learning Assessment
+
+Responsible for:
+
+- Exercise correctness.
+- Knowledge checks.
+- Performance tracking.
+- Weakness identification.
+- Adaptive lesson recommendations.
+
+Create structured AI responses.
+
+Example conceptual response:
+
+{
+  "message": "Your knight can attack two valuable pieces at once.",
+  "teaching_intent": "explain_tactic",
+  "actions": [
+    {
+      "type": "HIGHLIGHT_SQUARES",
+      "squares": ["e5", "c6"]
+    }
+  ],
+  "exercise": null,
+  "next_step": "ask_student"
+}
+
+This is a conceptual contract, not permission to accept arbitrary model-generated actions.
+
+Define and validate actual TypeScript schemas.
+
+The application must gracefully handle malformed JSON, unavailable models, timeouts, and provider errors.
+
+---
+
+# 8. DATABASE ARCHITECTURE
+
+Use Supabase PostgreSQL.
+
+Design a normalized schema.
+
+Potential tables:
+
+- profiles
+- student_preferences
+- learning_paths
+- courses
+- modules
+- lessons
+- lesson_content
+- lesson_attempts
+- lesson_progress
+- student_skill_profiles
+- exercises
+- exercise_attempts
+- puzzles
+- puzzle_attempts
+- games
+- game_moves
+- game_analyses
+- opening_repertoires
+- achievements
+- user_achievements
+- learning_streaks
+- daily_goals
+- ai_conversations
+- ai_messages
+- ai_usage_records
+- subscriptions (only if monetization is implemented)
+- notifications
+
+Important:
+
+- Use UUID identifiers where appropriate.
+- Define foreign keys.
+- Define indexes.
+- Add created_at and updated_at where appropriate.
+- Add database constraints.
+- Define ownership rules.
+- Enable RLS on every user-owned table.
+- Use explicit policies.
+- Never trust user_id sent by a client.
+- Derive authenticated identity from verified server-side sessions.
+- Use migrations as the source of truth.
+- Do not rely on manually editing production tables.
+
+The schema must support future expansion without overengineering the initial implementation.
+
+---
+
+# 9. UI / UX DESIGN SYSTEM
+
+Design a premium, professional chess academy.
+
+Visual direction:
+
+- Dark navy / charcoal surfaces.
+- Warm ivory text.
+- Muted gold accents.
+- Elegant chess-inspired visual elements.
+- Clean typography.
+- Subtle transitions.
+- Consistent spacing.
+- High-quality chessboard presentation.
+
+Suggested palette:
+
+- Background: #0B1220
+- Surface: #121D2E
+- Elevated surface: #19273A
+- Primary accent: #D6B56D
+- Text: #F3F0E8
+- Secondary text: #AAB5C4
+- Success: accessible green.
+- Danger: accessible red.
+
+Use colors consistently through design tokens.
+
+Avoid:
+
+- Excessive gradients.
+- Overuse of glassmorphism.
+- Unnecessary animations.
+- Oversized cards.
+- Cluttered dashboards.
+- Random decorative charts.
+- Excessive gold.
+- Generic AI-generated dashboard aesthetics.
+
+Design a consistent experience across desktop, tablet, and mobile.
+
+Mobile must not simply shrink the desktop interface.
+
+The chessboard and AI chat must adapt to smaller screens intelligently.
+
+Create reusable components:
+
+- AppSidebar
+- TopNavigation
+- DashboardCard
+- ProgressCard
+- ChessboardContainer
+- MoveHistory
+- CoachChat
+- LessonViewer
+- LessonProgress
+- PuzzleCard
+- AchievementBadge
+- SkillRadar
+- EmptyState
+- ErrorState
+- LoadingState
+- ConfirmationDialog
+
+Use accessible semantic HTML and keyboard-friendly controls.
+
+---
+
+# 10. APPLICATION ROUTE STRUCTURE
+
+Plan and implement routes such as:
+
+Public:
+
+- /
+- /features
+- /how-it-works
+- /about
+- /auth/login
+- /auth/signup
+- /auth/forgot-password
+
+Authenticated:
+
+- /dashboard
+- /academy
+- /academy/learning-path
+- /academy/course/[courseId]
+- /academy/lesson/[lessonId]
+- /coach
+- /practice
+- /practice/arena
+- /practice/puzzles
+- /analysis
+- /analysis/[gameId]
+- /openings
+- /endgames
+- /progress
+- /achievements
+- /profile
+- /settings
+
+Admin routes should be introduced only when actual administration functionality is implemented.
+
+---
+
+# 11. PROJECT STRUCTURE
+
+Create a modular, maintainable structure.
+
+Suggested starting structure:
+
+src/
+  app/
+    (public)/
+    (auth)/
+    (student)/
+    api/
+  components/
+    ui/
+    layout/
+    chess/
+    dashboard/
+    learning/
+    coach/
+  features/
+    authentication/
+    onboarding/
+    academy/
+    lessons/
+    chess-engine/
+    ai-coach/
+    practice/
+    puzzles/
+    analysis/
+    progress/
+    achievements/
+  lib/
+    ai/
+    chess/
+    supabase/
+    validation/
+    security/
+  hooks/
+  stores/
+  types/
+  config/
+
+supabase/
+  migrations/
+  seed.sql
+
+public/
+  images/
+  icons/
+
+tests/
+  unit/
+  integration/
+  e2e/
+
+docs/
+  PRODUCT_REQUIREMENTS.md
+  SYSTEM_ARCHITECTURE.md
+  DATABASE_DESIGN.md
+  AI_TEACHING_ARCHITECTURE.md
+  DESIGN_SYSTEM.md
+  ROADMAP.md
+  TASK_TRACKER.md
+  DECISIONS.md
+  TESTING_STRATEGY.md
+  SECURITY.md
+  CHANGELOG.md
+
+This is a proposed structure, not an instruction to create unnecessary empty directories. Refine it based on actual architectural needs.
+
+---
+
+# 12. SECURITY REQUIREMENTS
+
+Security is mandatory.
+
+Implement:
+
+- Server-side API key management.
+- Secure authentication.
+- Authorization checks.
+- Supabase RLS.
+- Input validation.
+- Zod or equivalent schema validation.
+- Rate limiting for AI endpoints.
+- Request size limits.
+- Safe error responses.
+- Protection against unauthorized data access.
+- Protection against prompt injection.
+- Secure handling of model-generated structured output.
+- No service-role credentials in client code.
+- No secrets in Git.
+- Appropriate CORS and security headers.
+- Logging without exposing sensitive information.
+
+Do not allow AI output to execute arbitrary application code, SQL, HTML, or JavaScript.
+
+Validate all AI board actions before execution.
+
+---
+
+# 13. TESTING AND QUALITY ASSURANCE
+
+Every feature requires appropriate testing.
+
+Unit tests:
+
+- Chess rules.
+- Legal move validation.
+- Board action validation.
+- AI response schemas.
+- XP calculation.
+- Progress calculation.
+- Adaptive learning rules.
+
+Integration tests:
+
+- Authentication.
+- Database persistence.
+- Lesson completion.
+- Puzzle attempts.
+- Game saving.
+- AI provider adapter.
+- Engine communication.
+
+E2E tests:
+
+- Signup and login.
+- Onboarding.
+- Starting a lesson.
+- Completing an exercise.
+- Playing a game.
+- Viewing game analysis.
+- Updating profile settings.
+
+Also verify:
+
+- Responsive layouts.
+- Empty states.
+- Loading states.
+- API failure states.
+- Unauthorized access.
+- Database isolation between users.
+
+A task is not complete simply because the application compiles.
+
+---
+
+# 14. DEVELOPMENT ROADMAP
+
+Implement in ordered milestones.
+
+Do not attempt all milestones at once.
+
+## MILESTONE 0 — Project Discovery and Foundation
+
+- Verify the project directory is empty.
+- Research current dependencies and official documentation.
+- Confirm agent capabilities and available MCP tools.
+- Define product requirements.
+- Define architecture.
+- Define implementation roadmap.
+- Create project documentation.
+- Initialize Git if appropriate.
+- Bootstrap Next.js.
+- Establish TypeScript, linting, formatting and testing.
+- Establish the design token system.
+
+Deliverable: Clean, documented, runnable project foundation.
+
+## MILESTONE 1 — Complete Frontend Experience
+
+Build the public landing page and authenticated application shell.
+
+Implement the visual structure of:
+
+- Landing page.
+- Authentication screens.
+- Dashboard.
+- Academy.
+- Lesson interface.
+- AI coach.
+- Practice arena.
+- Puzzle arena.
+- Game analysis.
+- Progress.
+- Profile and settings.
+
+Use clearly identified preview data where backend integration has not yet been implemented.
+
+Do not present preview data as real persisted student information.
+
+## MILESTONE 2 — Authentication and Student Foundations
+
+- Supabase integration.
+- Signup/login.
+- Session management.
+- Student profiles.
+- Onboarding.
+- Database migrations.
+- RLS policies.
+
+## MILESTONE 3 — Chess Core
+
+- Chessboard.
+- Legal moves.
+- Move history.
+- FEN and PGN handling.
+- Board actions.
+- Stockfish adapter.
+- Engine lifecycle and error handling.
+
+## MILESTONE 4 — Curriculum and Lesson Engine
+
+- Course/module/lesson model.
+- Lesson content.
+- Lesson progression.
+- Interactive exercises.
+- Assessment.
+- Completion persistence.
+
+## MILESTONE 5 — AI Chess Coach
+
+- Provider adapter.
+- AI configuration.
+- Context builder.
+- Teaching orchestrator.
+- Structured actions.
+- Board interaction.
+- Conversation persistence.
+- Error handling.
+
+## MILESTONE 6 — Practice Arena
+
+- Engine-powered opponent.
+- Difficulty settings.
+- Time controls.
+- Game persistence.
+- Game completion.
+
+## MILESTONE 7 — Puzzle Training
+
+- Puzzle content.
+- Validation.
+- Attempts.
+- Hints.
+- Performance tracking.
+
+## MILESTONE 8 — Game Analysis
+
+- Engine analysis.
+- Move classification.
+- Evaluation changes.
+- AI explanations.
+- Improvement recommendations.
+
+## MILESTONE 9 — Adaptive Learning
+
+- Skill profiles.
+- Weakness detection.
+- Smart revision.
+- Personalized learning path.
+
+## MILESTONE 10 — Gamification and Analytics
+
+- XP.
+- Achievements.
+- Streaks.
+- Daily goals.
+- Analytics.
+
+## MILESTONE 11 — Production Readiness
+
+- Full security review.
+- Performance optimization.
+- Accessibility audit.
+- Mobile testing.
+- E2E testing.
+- Deployment documentation.
+- Backup and recovery considerations.
+- Operational logging and monitoring.
+
+Milestones may be subdivided into smaller tasks. Never skip dependencies.
+
+---
+
+# 15. DOCUMENTATION AND PROJECT MEMORY
+
+The project must maintain its own development history.
+
+Update relevant Markdown files after meaningful work.
+
+Mandatory documentation rules:
+
+- TASK_TRACKER.md must reflect real task status.
+- ROADMAP.md must reflect completed and pending milestones.
+- DECISIONS.md must record architectural decisions.
+- CHANGELOG.md must record meaningful changes.
+- SYSTEM_ARCHITECTURE.md must reflect the actual implementation.
+- Add feature-specific documentation when necessary.
+
+Do not document planned features as completed features.
+
+Every completed task should include:
+
+- What changed.
+- Files changed.
+- Technical decisions.
+- Commands executed.
+- Tests executed.
+- Test results.
+- Known limitations.
+- Remaining work.
+
+---
+
+# 16. EXECUTION PROTOCOL — READ CAREFULLY
+
+The Orchestrator must follow this exact process.
+
+### Step 1 — Discover
+
+Inspect the actual directory:
+
+`C:\Users\rmdis\workspace\chess_academy`
+
+Confirm whether it is empty.
+
+Do not create or overwrite files before checking the directory.
+
+### Step 2 — Research
+
+Use available research tools, GitHub, official documentation, and relevant MCP integrations.
+
+Verify:
+
+- Framework compatibility.
+- Chessboard API.
+- Chess engine integration.
+- Supabase architecture.
+- AI provider APIs.
+- Licensing.
+- Testing strategy.
+
+### Step 3 — Plan
+
+Delegate planning and architecture reviews to the appropriate agents.
+
+Create a dependency-aware roadmap.
+
+### Step 4 — Establish Foundation
+
+Initialize the project and create the necessary documentation.
+
+### Step 5 — Implement Incrementally
+
+Execute one small task at a time.
+
+For every task:
+
+1. Plan.
+2. Delegate.
+3. Implement.
+4. Test.
+5. Review.
+6. Fix failures.
+7. Update documentation.
+8. Report evidence.
+
+Do not automatically proceed through multiple independent tasks.
+
+### Step 6 — Stop and Report
+
+After the first runnable frontend milestone, stop and provide:
+
+- What has been built.
+- Which routes are available.
+- How to run the application.
+- Screens or preview instructions.
+- Tests performed.
+- Known limitations.
+- What requires user approval or feedback.
+
+Wait for the user's direction before starting the next implementation task.
+
+For subsequent tasks, follow the same controlled, incremental reporting process.
+
+---
+
+# 17. DEFINITION OF DONE
+
+A feature is complete only when:
+
+- Its requirements are satisfied.
+- Its implementation is integrated.
+- Its visible controls work.
+- Its data is persisted where required.
+- Its security requirements are met.
+- Validation exists.
+- Error states are handled.
+- Relevant tests pass.
+- Documentation is updated.
+- Actual evidence is reported.
+
+Never report an untested feature as verified.
+
+Never invent screenshots, test results, agent execution, database migrations, or deployment status.
+
+---
+
+# 18. FIRST ASSIGNMENT — START NOW
+
+Your first assignment is:
+
+**TASK 001 — Project Discovery, Architecture and Foundation Planning**
+
+Perform these actions:
+
+1. Inspect the exact project root.
+2. Verify that it is empty or identify any existing files.
+3. Inspect available Kilo Code agents and tools.
+4. Assign research to appropriate agents.
+5. Research current official documentation.
+6. Define the complete product architecture.
+7. Define the curriculum structure.
+8. Define the AI teaching architecture.
+9. Define the database architecture.
+10. Define the UI/UX design system.
+11. Define the milestone roadmap.
+12. Create the relevant documentation files.
+13. Bootstrap the initial application foundation only when the architecture is sufficiently established.
+14. Verify the project can run.
+15. Produce a detailed TASK 001 completion report.
+
+Do not jump directly into implementing every feature.
+
+After TASK 001, wait for direction before beginning the next task.
+
+---
+
+# FINAL DIRECTIVE
+
+Build ChessMind Academy as a real educational product that can genuinely help someone learn chess from absolute zero.
+
+Prioritize teaching quality, correctness, usability, architecture, security, and maintainability.
+
+Think like a product company, architect like a senior engineer, teach like a professional chess coach, and test like a quality assurance engineer.
+
+**The ultimate goal is not to help users merely play more chess. It is to help them understand chess deeply and become better players through structured, personalized education.**
